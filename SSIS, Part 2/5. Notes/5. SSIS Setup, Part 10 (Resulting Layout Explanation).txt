@@ -1,0 +1,6 @@
+- If a record is found and the price has been modified in the Excel file AND that
+price should go into the DB Table, set EndDate with ContainerStartTime upon Updating
+
+- Union All with unchanged rows
+
+- StartDate for the new record will have ContainerStartTime as its StartDate

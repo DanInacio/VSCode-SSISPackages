@@ -1,0 +1,5 @@
+In LookUp Transformation, only the matching data is considered for Output.
+However, it is a slow process.
+
+To improve performance, we can load data we want to search into the Cache!
+Then we use LookUp with a connection to that cache.

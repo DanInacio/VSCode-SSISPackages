@@ -1,0 +1,18 @@
+SELECT FileSystem, FreeSpace, Size FROM Win32_LogicalDisk
+WHERE NAME="C:"
+
+SELECT FreeSpace, DeviceID, SystemName, Description FROM Win32_LogicalDisk
+WHERE DeviceID = "C:"
+
+SELECT * FROM Win32_NTLogEvent
+WHERE logfile='Application' AND
+(SourceName = 'sqlispackage150') AND timegenerated > '20201224'
+
+------
+
+SELECT FileSize FROM cim_datafile
+WHERE name="C:\\Program Files\\Microsoft SQL Server\\
+MSSQL15.SQLEXPRESS\\MSSQL\\DATA\\AdventureWorks2019.mdf"
+
+SELECT FreeSpace FROM Win32_LogicalDisk
+WHERE DeviceID = 'C:'

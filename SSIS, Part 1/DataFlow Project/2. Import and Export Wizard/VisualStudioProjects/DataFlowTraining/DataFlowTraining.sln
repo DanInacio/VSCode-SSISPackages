@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "DataFlowTraining", "DataFlowTraining\DataFlowTraining.dtproj", "{B77CB50B-0870-4D37-8F2F-B9AC1DACAB2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B77CB50B-0870-4D37-8F2F-B9AC1DACAB2B}.Development|Default.ActiveCfg = Development
+		{B77CB50B-0870-4D37-8F2F-B9AC1DACAB2B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19566479-D0D7-47AA-9440-38F5266D3D39}
+	EndGlobalSection
+EndGlobal

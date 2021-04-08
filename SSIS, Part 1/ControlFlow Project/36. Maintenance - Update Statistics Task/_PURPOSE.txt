@@ -1,0 +1,6 @@
+As you add more data, client statistics get updated.
+SSIS does not need to run this...
+
+BUT
+
+On a large database, when you get a lot of data all at once, this is REQUIRED!

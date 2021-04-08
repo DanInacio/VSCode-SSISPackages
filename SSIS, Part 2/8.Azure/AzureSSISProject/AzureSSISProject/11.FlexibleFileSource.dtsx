@@ -1,0 +1,228 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/26/2021 2:43:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{771706B6-13DE-40CE-8C88-8FB59918AB95}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="11 FlexibleFileSource"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{55C590E2-11E4-4273-BC47-A00C35A0A8E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6B0CF03B-F64A-41DE-B53A-1C5488833B89}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flexible File Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="MicrosoftContactInfo"
+              description="Extracts data from a file on various supported storage services, such as Azure Blob Storage and Azure Data Lake Storage Gen2. The supported file formats are: Text, Avro, Orc, and Parquet."
+              name="Flexible File Source"
+              usesDispositions="true"
+              validateExternalMetadata="False">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Connection manager type"
+                  name="ConnectionManagerType">0</property>
+                <property
+                  dataType="System.String"
+                  description="Folder Path"
+                  expressionType="Notify"
+                  name="FolderPath"></property>
+                <property
+                  dataType="System.String"
+                  description="File Name"
+                  expressionType="Notify"
+                  name="FileName"></property>
+                <property
+                  dataType="System.Int32"
+                  description="File Format"
+                  name="FileFormat">0</property>
+                <property
+                  dataType="System.String"
+                  description="The character used to delimit columns in a file"
+                  name="ColumnDelimiter">,</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Column names in the first data row"
+                  expressionType="Notify"
+                  name="FirstRowAsColumnNames">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Compress File"
+                  name="CompressFile">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Compress Type"
+                  name="CompressionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Compress Level"
+                  name="CompressionLevel">0</property>
+                <property
+                  dataType="System.String"
+                  description="The character used to separate rows in a file"
+                  name="RowDelimiter"></property>
+                <property
+                  dataType="System.String"
+                  description="The special character used to escape a column delimiter in the content of input file"
+                  name="EscapeChar"></property>
+                <property
+                  dataType="System.String"
+                  description="The character used to quote a string value"
+                  name="QuoteChar"></property>
+                <property
+                  dataType="System.String"
+                  description="One or more characters used to represent a null value"
+                  name="NullValue">\N</property>
+                <property
+                  dataType="System.String"
+                  description="Specify the encoding name"
+                  name="EncodingName">UTF-8</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the number of non-empty rows to skip when reading data from input files"
+                  expressionType="Notify"
+                  name="SkipLineCount">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to treat null or empty string as a null value when reading data from an input file"
+                  name="TreatEmptyAsNull">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ExtFileSource</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flexible File Source.Connections[ConnectionManager]"
+                  description="Connection manager name"
+                  name="ConnectionManager" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Flexible File Source.Outputs[Output]"
+                  name="Output">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Flexible File Source.Outputs[Error output]"
+                  isErrorOut="true"
+                  name="Error output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flexible File Source.Outputs[Error output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flexible File Source.Outputs[Error output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flexible File Source.Outputs[Error output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flexible File Source.Outputs[Error output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Data Flow Task\Flexible File Source"
+          TopLeft="120.833328531848,53.7333337603675" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="116.66666203075,154.266667892668" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

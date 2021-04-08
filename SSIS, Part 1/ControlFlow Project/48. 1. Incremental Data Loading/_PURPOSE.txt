@@ -1,0 +1,4 @@
+1st time the package is run, insert 5 entries
+2nd time, insert the NEXT 2 entries!
+
+You will need to "lookup" at the destination table to see what already exists there!

@@ -1,0 +1,5 @@
+Variables values can change at run time but parameters value can't change.
+Variables can be used only within the package,
+we can't use it for other packages within the solution
+but we can use Parameters for multiple packages
+(package exist with in the Solution Explorer).

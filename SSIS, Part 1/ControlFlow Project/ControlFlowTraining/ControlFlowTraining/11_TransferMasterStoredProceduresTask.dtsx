@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/18/2020 8:58:18 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{FAC25CEF-AA07-411E-AC18-C53437923590}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{3F477052-B277-40FB-8967-BEC8C33145EC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LU2476874W2\SQLEXPRESS]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{7EDC4B01-F03E-4287-81F4-0586CF7AEAF8}"
+      DTS:ObjectName="LU2476874W2\SQLEXPRESS">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=LU2476874W2\SQLEXPRESS;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Master Stored Procedures Task"
+      DTS:CreationName="Microsoft.TransferStoredProceduresTask"
+      DTS:Description="Transfer Master Stored Procedures Task"
+      DTS:DTSID="{04A3A2A9-6704-4986-A2CA-6468AEB70B0F}"
+      DTS:ExecutableType="Microsoft.TransferStoredProceduresTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Master Stored Procedures Task"
+      DTS:TaskContact="Transfer Stored Procedures Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferStoredProceduresTaskData
+          IfObjectExists="Overwrite"
+          SourceConnection="{7EDC4B01-F03E-4287-81F4-0586CF7AEAF8}"
+          m_DestinationConnectionID="{7EDC4B01-F03E-4287-81F4-0586CF7AEAF8}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="267.2,41.6"
+          Id="Package\Transfer Master Stored Procedures Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

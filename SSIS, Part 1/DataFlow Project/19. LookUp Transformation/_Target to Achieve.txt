@@ -1,0 +1,1 @@
+Use SalesDetail as Input and search for products in the product table.

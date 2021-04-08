@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/24/2020 11:16:03 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{09571DBC-5ADE-47B8-90A2-AAAB9C210EB3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="32_MessageQueuingTask_Sender"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{84A7E699-4252-4294-B6EA-D49C0E3F7835}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ssis-msmq-demo]"
+      DTS:CreationName="MSMQ"
+      DTS:DTSID="{0B086DB0-A972-414E-9E8E-215556CDEB81}"
+      DTS:ObjectName="ssis-msmq-demo">
+      <DTS:ObjectData>
+        <MsmqConnectionManager
+          ConnectionString=".\private$\ssis-msmq-demo"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Message Queue Task"
+      DTS:CreationName="Microsoft.MessageQueueTask"
+      DTS:Description="Message Queue Task"
+      DTS:DTSID="{CDA818B8-F1EE-4055-926D-D0606572E77E}"
+      DTS:ExecutableType="Microsoft.MessageQueueTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Message Queue Task"
+      DTS:TaskContact="Message Queue Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <MessageQueueTask:MessageQueueTaskData
+          MessageQueueTask:CurrentPackageID="{09571DBC-5ADE-47B8-90A2-AAAB9C210EB3}"
+          MessageQueueTask:QueuePath="ssis-msmq-demo"
+          MessageQueueTask:StringMessage="Message to be stored in MSMQ" xmlns:MessageQueueTask="www.microsoft.com/sqlserver/dts/tasks/messagequeuetask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Message Queue Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

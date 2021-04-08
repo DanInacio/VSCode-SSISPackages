@@ -1,0 +1,4 @@
+Get computer information at Operative System level
+
+For example, copy a DB MDF File, IF there is enough space to copy that file!
+(C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\[FILENAME.MDF])

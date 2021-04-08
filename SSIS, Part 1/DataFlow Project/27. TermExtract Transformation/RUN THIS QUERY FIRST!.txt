@@ -1,0 +1,11 @@
+/****** Object:  Table [dbo].[TermExtractionDemo]    Script Date: 3/26/2017 1:30:54 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TermExtractionDemo](
+	[Term] [nvarchar](150) NULL,
+	[Score] [int] NULL
+) ON [PRIMARY]
+
+GO

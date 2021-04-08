@@ -1,0 +1,5 @@
+- Select "Parameters" at header Level, i.e., package level.
+This is data we want to be dynamic instead of fixed text or fixed variables
+- Assign default values to the parameters!
+- Set them as "Required" -> Package needs this to run!
+- Assign the parameter to fill in the variable

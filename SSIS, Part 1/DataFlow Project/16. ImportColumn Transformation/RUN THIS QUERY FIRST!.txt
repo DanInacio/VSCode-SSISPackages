@@ -1,0 +1,4 @@
+CREATE TABLE ImportColumnDemo (
+    ImagePath nvarchar(255),
+    EmployeeImage image
+);

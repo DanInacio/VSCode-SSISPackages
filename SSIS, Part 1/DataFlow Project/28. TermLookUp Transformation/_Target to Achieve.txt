@@ -1,0 +1,5 @@
+Check how frequently a specific word occurs in which sentences!
+
+Set a source file with sentences
+Use term lookup to search for specific terms in a DB (termExtraction table)
+Store in termLookUp table

@@ -1,0 +1,2 @@
+Similar to UnionAll but involves sorting the data
+Combine SORTED data from multiple sources into a SORTED output!

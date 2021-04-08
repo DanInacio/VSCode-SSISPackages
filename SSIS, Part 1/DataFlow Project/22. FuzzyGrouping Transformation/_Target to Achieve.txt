@@ -1,0 +1,8 @@
+Use this to clean and standardize data!
+Remove duplicates, even when written differently!
+
+For example, Rep. and Representative are duplicates!
+
+
+WARNING! YOU WILL NEED A CONDITIONAL SPLIT!
+Only data which is absolutely unique should be passed to the destination!

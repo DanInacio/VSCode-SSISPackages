@@ -1,0 +1,2 @@
+Check which records have been deleted from the source
+and set the flag IsDeleted to True, in the destination!

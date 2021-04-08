@@ -1,0 +1,4 @@
+CREATE TABLE OccupationEmpty(
+    OccupationID smallint IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    OccupationTitle VARCHAR(50) NOT NULL
+);

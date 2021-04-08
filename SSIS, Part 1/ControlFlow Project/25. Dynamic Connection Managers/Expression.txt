@@ -1,0 +1,1 @@
+"C:\\Users\\Daniel.Inacio\\Desktop\\SSIS\\ControlFlow Project\\25. Dynamic Connection Managers\\Output\\Products_" + ((DT_WSTR,2)DatePart("hh",getDate()))+((DT_WSTR,2)DatePart("mi",getDate()))+((DT_WSTR,2)DatePart("ss",getDate()))+ ".txt" 

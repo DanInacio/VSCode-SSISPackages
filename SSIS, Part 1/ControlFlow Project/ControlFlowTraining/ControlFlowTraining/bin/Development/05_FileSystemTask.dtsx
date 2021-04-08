@@ -1,0 +1,203 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/18/2020 8:56:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{DEBECDF2-76EC-4917-8A08-8C36F22B9358}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{4AE9A043-F6FD-424B-A538-87D8812F0E54}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[File Output]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{4A4C4CBA-6B18-4193-A006-A75CA9B08BE8}"
+      DTS:ObjectName="File Output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\File Output" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Pivot Source.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2808C5F2-9340-4D4B-8B33-4E35D28ACF37}"
+      DTS:ObjectName="Pivot Source.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\File Input\Pivot Source.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Pivot Source.txt 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9C84A994-803C-495C-8151-7CC0676D0414}"
+      DTS:ObjectName="Pivot Source.txt 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\Package_TargetFolder\Pivot Source.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E69571F-B069-4769-9FB8-FA9679BD996A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFile">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\File Input\Pivot Source.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC2FAB8C-A62D-4001-86BA-0114B593FE99}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\File Input\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F8660DE7-E93D-4F9D-9386-3BB5730C7011}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetFile">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\File Output\Pivot Source_Variable.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6472B4E5-95D5-4D41-8CD2-813AF8B17019}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\5. FileSystem Task\Package_TargetFolder\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\File System Task | Copy Directories (Variable)"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{FB5D083F-5127-430A-81D9-E0F7D599E42E}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task | Copy Directories (Variable)"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CopyDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::SourceFolder"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::TargetFolder"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File System Task | Copy Files (Fixed)"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{E165B74E-DA63-4EEC-A45F-B716D485F78B}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task | Copy Files (Fixed)"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{2808C5F2-9340-4D4B-8B33-4E35D28ACF37}"
+          TaskDestinationPath="{4A4C4CBA-6B18-4193-A006-A75CA9B08BE8}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File System Task | Copy Files (Variable)"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{AF451972-8BAD-46EC-9DCA-13CE25A64477}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task | Copy Files (Variable)"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::SourceFile"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::TargetFile"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File System Task | Set Attributes"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{87909D5C-D466-4E57-A427-2C1F40CF375F}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task | Set Attributes"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="SetAttributes"
+          TaskSourcePath="{9C84A994-803C-495C-8151-7CC0676D0414}"
+          TaskFileAttributes="ReadOnly" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="252,41.6"
+          Id="Package\File System Task | Copy Files (Fixed)"
+          TopLeft="10.5000000851495,5.5" />
+        <NodeLayout
+          Size="264.8,41.6"
+          Id="Package\File System Task | Copy Files (Variable)"
+          TopLeft="11.9285715380493,61.3235301946686" />
+        <NodeLayout
+          Size="294.4,41.6"
+          Id="Package\File System Task | Copy Directories (Variable)"
+          TopLeft="14.7857139329521,123.44117770393" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\File System Task | Set Attributes"
+          TopLeft="16.214284874955,184.794119320114" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

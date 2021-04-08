@@ -1,0 +1,5 @@
+ALL IN A SINGLE LINE!
+
+Input Folder (*.* means All Files) -> C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\3. ExecuteProcess Task\Process to Execute\*.*
+Output Folder ----------------------> C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\3. ExecuteProcess Task\EP_Output\
+Include sub-directories ------------> /S

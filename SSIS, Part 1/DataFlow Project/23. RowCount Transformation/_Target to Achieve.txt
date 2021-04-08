@@ -1,0 +1,3 @@
+RowCount counts how many rows the source is providing.
+
+Based on a certain number of rows, we want to do X or Y.

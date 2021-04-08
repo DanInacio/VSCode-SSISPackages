@@ -1,0 +1,3 @@
+SELECT * INTO NewOccupations FROM OccupationEmpty WHERE 1=0
+--- Create the table but do not add data
+--- Make sure Identity is (1,1)

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2021 2:40:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{7F4642B2-3887-4D8D-8E12-B7C1A6771B44}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="06_PigTask"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{E1672F72-6CFD-42A2-84A6-994288671089}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Hadoop Connection Manager]"
+      DTS:CreationName="Hadoop"
+      DTS:DTSID="{4EE48CC3-619A-42F7-867F-790242169F93}"
+      DTS:ObjectName="Hadoop Connection Manager">
+      <DTS:ObjectData>
+        <HadoopConnectionManager
+          ConnectionString="WebHdfsHost=192.168.160.128;WebHdfsPort=50070;WebHdfsUserName=maria_dev;WebHCatHost=192.168.160.128;WebHCatPort=50111;WebHCatUser=maria_dev;EnableWebHdfs=True;EnableWebHCat=True;WebHdfsAuthType=Basic;WebHdfsDomain=;WebHCatAuthType=Basic;WebHCatDomain=;WebHdfsIsHttps=False;WebHCatIsHttps=False;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Hadoop Pig Task 1 | Load Data into Correct Folder"
+      DTS:CreationName="HadoopPigTask"
+      DTS:Description="Hadoop Pig Task"
+      DTS:DTSID="{6001AD59-B4BB-4E15-8967-B7D69D1FBDD3}"
+      DTS:ExecutableType="HadoopPigTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hadoop Pig Task 1 | Load Data into Correct Folder"
+      DTS:TaskContact="Hadoop Pig Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <HadoopPigTask
+          SourceType="DirectInput"
+          TimeoutInMinutes="1440" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Hadoop Pig Task | Remove Folder"
+      DTS:CreationName="HadoopPigTask"
+      DTS:Description="Hadoop Pig Task"
+      DTS:DTSID="{675D4CC7-E0B1-409C-8695-BD46A0B8E568}"
+      DTS:ExecutableType="HadoopPigTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hadoop Pig Task | Remove Folder"
+      DTS:TaskContact="Hadoop Pig Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <HadoopPigTask
+          SourceType="DirectInput"
+          TimeoutInMinutes="1440" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2A8A3588-1CBA-4725-88FA-77B61C8E8070}"
+      DTS:From="Package\Hadoop Pig Task | Remove Folder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Hadoop Pig Task 1 | Load Data into Correct Folder" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="237.6,41.6"
+          Id="Package\Hadoop Pig Task | Remove Folder"
+          TopLeft="114.166662130091,89.2666673760944" />
+        <NodeLayout
+          Size="311.2,41.6"
+          Id="Package\Hadoop Pig Task 1 | Load Data into Correct Folder"
+          TopLeft="199.166658752495,181.133334772852" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="232.966662130091,130.866667376094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.799996622404,50.2666673967574"
+              Start="0,0"
+              End="121.799996622404,42.7666673967574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1333336983787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1333336983787"
+                    Point2="0,25.1333336983787"
+                    Point3="4,25.1333336983787" />
+                  <mssgle:LineSegment
+                    End="117.799996622404,25.1333336983787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.799996622404,25.1333336983787"
+                    Point2="121.799996622404,25.1333336983787"
+                    Point3="121.799996622404,29.1333336983787" />
+                  <mssgle:LineSegment
+                    End="121.799996622404,42.7666673967574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

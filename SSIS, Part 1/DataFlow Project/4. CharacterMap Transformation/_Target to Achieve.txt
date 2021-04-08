@@ -1,0 +1,2 @@
+Convert Department.Name to UpperCase
+Convert Department.GroupName to LowerCase

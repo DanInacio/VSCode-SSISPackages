@@ -1,0 +1,8 @@
+Data captured by Slowly Changing Dimensions (SCDs) change slowly but unpredictably,
+rather than according to a regular schedule
+
+Whenever a specific column is undergoing some changes, we would like to set an END DATE
+to that record and insert a new record with the date as NULL
+That way, we figure out what is the current value for an entry
+
+https://en.wikipedia.org/wiki/Slowly_changing_dimension

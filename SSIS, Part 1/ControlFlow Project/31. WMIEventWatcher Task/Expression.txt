@@ -1,0 +1,4 @@
+SELECT * FROM __InstanceCreationEvent WITHIN 10
+WHERE TargetInstance ISA 'CIM_DataFile' AND TargetInstance.Name = "C:\\Users\\Daniel.Inacio\\Desktop\\SSIS\\ControlFlow Project\\31. WMIEventWatcher Task\\ToWatchAndDelete\\Trash.txt"
+
+"Within 10 minutes"

@@ -1,0 +1,1 @@
+Group by SalesOrderID and compute the total value of LineTotal

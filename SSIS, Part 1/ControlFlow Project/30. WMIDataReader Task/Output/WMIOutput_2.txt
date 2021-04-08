@@ -1,0 +1,4 @@
+Description, Local Fixed Disk
+DeviceID, C:
+FreeSpace, 305790763008
+SystemName, LU2476874W2

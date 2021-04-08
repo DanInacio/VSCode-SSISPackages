@@ -1,0 +1,3 @@
+Get graphical info on data
+
+Person.Person has some relevant insights...

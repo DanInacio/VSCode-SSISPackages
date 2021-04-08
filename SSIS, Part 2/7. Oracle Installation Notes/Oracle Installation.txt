@@ -1,0 +1,18 @@
+1. Installing JRE
+	Java SE Runtime Environment 8 (jre-8u231-windows-x64.exe)
+
+2. Installing Oracle 11g
+	Oracle Database 11g Release 2
+	Run setup.exe
+		Create and configure a database
+		Desktop class
+		Set an admin pw
+
+3. Installing SQLDeveloper
+	SQLDeveloper 19.2.1, 64-bit with JDK 8 included
+
+4. Installing Oracle 11g Client
+	Oracle 11g 32-bit Client (win32_11gR2_gateways.zip)
+	Run setup.exe
+		Administrator Type of Installation
+		(Run setup.exe a second time later and set up InstantClient!!!)

@@ -1,0 +1,2 @@
+Stores data in memory so you can store it, in an in-between destination,
+and still use it in the rest of the workflow!

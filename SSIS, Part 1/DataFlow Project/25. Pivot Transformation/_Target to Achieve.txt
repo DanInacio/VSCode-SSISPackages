@@ -1,0 +1,4 @@
+Pivot your data, specifically
+- day of week should become columns
+- Unique month should become rows
+- Expenses should become values

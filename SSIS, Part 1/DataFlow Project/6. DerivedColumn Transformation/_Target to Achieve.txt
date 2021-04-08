@@ -1,0 +1,6 @@
+Person.Person in the DB
+Get only the Title and 3 Named columns as Input for Package
+Create a column which joins the names
+
+WARNING: If a SINGLE column is BLANK, result is BLANK!!!
+This will fixed in later stages!!!

@@ -1,0 +1,3 @@
+Open "SQL Server 2019 Import and Export Data (64-bit)"
+	You can also right-click your DB > Tasks > Export Data
+	You can also use Visual Studio > New > Project > Integration Services Project

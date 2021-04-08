@@ -1,0 +1,1 @@
+https://www.sqlshack.com/single-package-deployment-in-sql-server-integration-services-2016/

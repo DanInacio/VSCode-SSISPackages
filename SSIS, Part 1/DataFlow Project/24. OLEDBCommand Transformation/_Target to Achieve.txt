@@ -1,0 +1,3 @@
+Runs an SQL statement/query/stored procedure for each row in a data flow.
+
+Use it to insert data from one Table into another, for example.

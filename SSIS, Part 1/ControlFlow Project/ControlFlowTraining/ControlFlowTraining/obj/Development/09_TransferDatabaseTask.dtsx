@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/18/2020 8:57:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{9AE347A6-ED0C-418F-AA2C-A9125F8B0566}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{EBD36A00-DA34-4FE7-9052-3F116BA77A17}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LU2476874W2\SQLEXPRESS]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{B5443F96-9406-4D59-90FB-D4EB618544C6}"
+      DTS:ObjectName="LU2476874W2\SQLEXPRESS">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=LU2476874W2\SQLEXPRESS;UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Database Task"
+      DTS:CreationName="Microsoft.TransferDatabaseTask"
+      DTS:Description="Transfer Database Task"
+      DTS:DTSID="{0C63550A-AB15-4D0E-8BCD-2E326426DEBB}"
+      DTS:ExecutableType="Microsoft.TransferDatabaseTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Database Task"
+      DTS:TaskContact="Transfer Database Task; Microsoft Corporation; SQL Server 2019; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <TransferDatabasesTaskData
+          SrcConn="{B5443F96-9406-4D59-90FB-D4EB618544C6}"
+          DestConn="{B5443F96-9406-4D59-90FB-D4EB618544C6}"
+          SrcDBName="AdventureWorks2019"
+          ReattachSrcDB="True"
+          SrcDBFiles="&quot;AdventureWorks2019.mdf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA&quot;,&quot;&quot;;&quot;AdventureWorks2019_log.ldf&quot;,&quot;C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA&quot;,&quot;&quot;"
+          DestDBName="DemoAW2019"
+          DestDBFiles="&quot;AdventureWorks2019.mdf&quot;,&quot;C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\9. TransferDatabase Task\DB&quot;,&quot;&quot;;&quot;AdventureWorks2019_log.ldf&quot;,&quot;C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\9. TransferDatabase Task\DB&quot;,&quot;&quot;"
+          DestOverwrite="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Transfer Database Task"
+          TopLeft="89.7857157210915,64.3823537669793" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

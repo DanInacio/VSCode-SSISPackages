@@ -1,0 +1,5 @@
+Use this to clean and standardize data!
+LookUp searches for perfect matches
+FuzzyLookUp searches on a "close enough" basis!
+
+Load unstandardized data from a text file into a DB (standardized)

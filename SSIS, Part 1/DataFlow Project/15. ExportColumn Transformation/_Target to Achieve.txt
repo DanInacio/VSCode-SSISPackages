@@ -1,0 +1,4 @@
+Export a single column from a table
+
+WARNING!!! Data type DT_WSTR = nvarchar in SQL Server
+For the ExportColumn, you NEED D_TEXT!!!

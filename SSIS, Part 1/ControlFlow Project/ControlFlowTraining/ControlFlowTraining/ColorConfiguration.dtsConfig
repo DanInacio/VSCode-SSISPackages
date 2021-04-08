@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<DTSConfiguration>
+	<DTSConfigurationHeading>
+		<DTSConfigurationFileInfo GeneratedBy="EURW\Daniel.Inacio" GeneratedFromPackageName="23_ConfigurationFiles" GeneratedFromPackageID="{FCEAB323-F764-47A2-9296-F3C2D3B8BF15}" GeneratedDate="24/12/2020 08:41:11"/>
+	</DTSConfigurationHeading>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Value]" ValueType="String">
+		<ConfiguredValue>Black</ConfiguredValue>
+	</Configuration>
+</DTSConfiguration>

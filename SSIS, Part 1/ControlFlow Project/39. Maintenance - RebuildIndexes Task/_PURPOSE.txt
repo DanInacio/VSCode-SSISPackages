@@ -1,0 +1,3 @@
+As users add data with jumbled indexes, the database can become slower.
+
+Rebuild indexes to speed up the database!

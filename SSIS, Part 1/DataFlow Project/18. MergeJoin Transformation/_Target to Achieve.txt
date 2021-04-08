@@ -1,0 +1,7 @@
+Merge 2 SORTED data flows into one, using FULL, LEFT or INNER JOIN!
+
+Join columns from 1 data Source (SalesOrderHeader) and another (SalesOrderDetail)
+
+INNER JOIN - COMMON records from both
+LEFT OUTER JOIN - All LEFT records plus unique RIGHT
+FULL OUTER JOIN - All from BOTH

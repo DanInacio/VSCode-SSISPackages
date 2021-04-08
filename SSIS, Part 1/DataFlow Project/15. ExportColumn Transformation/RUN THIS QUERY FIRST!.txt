@@ -1,0 +1,6 @@
+CREATE TABLE ExportColumnDemo (
+    ProductID int,
+    ProductName nvarchar(50),
+    Description nvarchar(50),
+    FilePath nvarchar(255)
+);

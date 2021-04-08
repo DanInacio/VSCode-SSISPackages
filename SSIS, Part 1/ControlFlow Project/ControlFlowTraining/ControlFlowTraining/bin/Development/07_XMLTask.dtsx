@@ -1,0 +1,233 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/18/2020 8:57:13 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{E2D6A2DC-95C2-4836-AD4D-42DBE90FCBBC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C3D263EA-867C-415D-9281-A457FE1BCE14}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Inventory.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{4DAE5818-6C79-490A-A68E-DCCAAD2A756E}"
+      DTS:ObjectName="Inventory.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\File\Inventory.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[m1.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8EA297B5-6195-4CD3-91DD-30F0652431AE}"
+      DTS:ObjectName="m1.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\Merge\m1.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[m2.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{564B10FA-F99B-48BD-BD3B-2820D3E42570}"
+      DTS:ObjectName="m2.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\Merge\m2.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[merged.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{EFF5F585-C37B-49B3-AA86-11FDD0AAD079}"
+      DTS:ObjectName="merged.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\Merge\merged.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XML_Output]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{1EF0C2B3-2087-4C30-927E-9989B0369BA2}"
+      DTS:ObjectName="XML_Output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\File\XML_Output" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XPATH_EvaluationOutput]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{368EC3B8-8243-4CCD-B33D-39F46A33C845}"
+      DTS:ObjectName="XPATH_EvaluationOutput">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\File\XPATH_EvaluationOutput" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XPATH_NodeListOutput]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A3524815-2E67-4857-A434-52A3695B3F85}"
+      DTS:ObjectName="XPATH_NodeListOutput">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\File\XPATH_NodeListOutput" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XPATH_ValuesOutput]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{22E8EFB8-4E88-4E6F-A1C1-976F4F05EC74}"
+      DTS:ObjectName="XPATH_ValuesOutput">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\SSIS\ControlFlow Project\7. XML Task\File\XPATH_ValuesOutput" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\XML Task | Evaluation Operation"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{572AE60C-8C2F-494E-929E-68D6989DBEB8}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task | Evaluation Operation"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="Inventory.xml"
+          SecondOperand="sum(/bookstore/book/price)"
+          SaveOperationResult="True"
+          Destination="XPATH_EvaluationOutput"
+          OverwriteDestination="True"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task | Merge Operation"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:DTSID="{844D2138-A94C-4E10-9CE8-2BA573C1E577}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task | Merge Operation"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="Merge"
+          Source="m1.xml"
+          SecondOperandType="FileConnection"
+          SecondOperand="m2.xml"
+          SaveOperationResult="True"
+          Destination="merged.xml"
+          OverwriteDestination="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task | Node List Operation"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{F22AE5D9-B39B-4E83-9B87-FDE65F188F22}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task | Node List Operation"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="Inventory.xml"
+          SecondOperand="/bookstore/book/author/first-name"
+          SaveOperationResult="True"
+          Destination="XPATH_NodeListOutput"
+          OverwriteDestination="True"
+          XPathOperation="NodeList"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XML Task | Values Operation"
+      DTS:CreationName="Microsoft.XMLTask"
+      DTS:Description="XML Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{B7030B66-89DE-470B-8AB8-3783E174F08F}"
+      DTS:ExecutableType="Microsoft.XMLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XML Task | Values Operation"
+      DTS:TaskContact="XML Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <XMLTaskData
+          OperationType="XPATH"
+          Source="Inventory.xml"
+          SecondOperand="//author[first-name=&quot;Toni&quot; and last-name=&quot;Bob&quot;]"
+          SaveOperationResult="True"
+          Destination="XPATH_ValuesOutput"
+          OverwriteDestination="True"
+          XPathOperation="Values"
+          PutResultInOneNode="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\XML Task | Evaluation Operation"
+          TopLeft="10.5000000851495,5.5" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\XML Task | Node List Operation"
+          TopLeft="14.0714282065022,65.3235298300284" />
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\XML Task | Values Operation"
+          TopLeft="19.0714277807547,127.44117733929" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\XML Task | Merge Operation"
+          TopLeft="29.071427440157,189.558824848551" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

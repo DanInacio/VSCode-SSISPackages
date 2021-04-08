@@ -1,0 +1,19 @@
+Transactions
+
+- At package level, set it as required!
+- You must (NOLOCK) in your SQL Queries
+because your tables will be locked during the transaction!
+- If the package fails, no data will be actually inserted,
+even if you viewed it mid-transaction with a (NOLOCK) query!
+
+https://www.mssqltips.com/sqlservertip/1585/
+how-to-use-transactions-in-sql-server-integration-services-ssis/
+
+
+
+DO NOT USE Transactions and Checkpoints in the SAME PACKAGE!
+
+When using checkpoints with a package that uses cache, make sure:
+- Cache Connection Manager uses FILE CACHE!
+
+https://www.sqlshack.com/using-checkpoint-in-ssis-package-to-restart-package-execution/

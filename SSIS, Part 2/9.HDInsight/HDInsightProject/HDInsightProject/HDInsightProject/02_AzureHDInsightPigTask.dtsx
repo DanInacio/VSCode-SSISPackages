@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2021 9:23:27 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{42A8CD96-E90B-4D97-BF1C-F835CA85F805}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="02_AzureHDInsightPigTask"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{FD2175FC-7DC4-465A-A9AE-305AA8FC175B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Azure HDInsight Pig Task | Delete Folder"
+      DTS:CreationName="PigTask"
+      DTS:Description="Azure HDInsight Pig Task"
+      DTS:DTSID="{93123A0B-2AB3-478B-A7A3-178AC535D0DD}"
+      DTS:ExecutableType="PigTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Azure HDInsight Pig Task | Delete Folder"
+      DTS:TaskContact="Azure HDInsight Pig Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <PigTask
+          ExternalStorageAccountDnsSuffix="core.windows.net" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Azure HDInsight Pig Task | Load Data into a Different File"
+      DTS:CreationName="PigTask"
+      DTS:Description="Azure HDInsight Pig Task"
+      DTS:DTSID="{CD090484-6273-4C10-B47D-D8466B53BF07}"
+      DTS:ExecutableType="PigTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Azure HDInsight Pig Task | Load Data into a Different File"
+      DTS:TaskContact="Azure HDInsight Pig Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <PigTask
+          ExternalStorageAccountDnsSuffix="core.windows.net" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5989F9F8-BECF-487A-9ACA-9B776F1B6789}"
+      DTS:From="Package\Azure HDInsight Pig Task | Delete Folder"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Azure HDInsight Pig Task | Load Data into a Different File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="268,41.6"
+          Id="Package\Azure HDInsight Pig Task | Delete Folder"
+          TopLeft="39.1666651103232,39.0000003099442" />
+        <NodeLayout
+          Size="343.2,41.6"
+          Id="Package\Azure HDInsight Pig Task | Load Data into a Different File"
+          TopLeft="76.6666636202072,127.400001012484" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="173.166665110323,80.6000003099442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75.099998509884,46.8000007025402"
+              Start="0,0"
+              End="75.099998509884,39.3000007025402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4000003512701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4000003512701"
+                    Point2="0,23.4000003512701"
+                    Point3="4,23.4000003512701" />
+                  <mssgle:LineSegment
+                    End="71.099998509884,23.4000003512701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.099998509884,23.4000003512701"
+                    Point2="75.099998509884,23.4000003512701"
+                    Point3="75.099998509884,27.4000003512701" />
+                  <mssgle:LineSegment
+                    End="75.099998509884,39.3000007025402" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

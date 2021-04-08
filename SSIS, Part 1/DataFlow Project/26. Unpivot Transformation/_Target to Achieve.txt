@@ -1,0 +1,2 @@
+Unpivot your data, specifically
+- day of week columns should become values

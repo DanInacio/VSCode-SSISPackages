@@ -1,0 +1,135 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2021 1:37:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LU2476874W2"
+  DTS:CreatorName="EURW\Daniel.Inacio"
+  DTS:DTSID="{B2160DD4-87D9-4CEC-880C-88745A692351}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="01_CopyFileTo_From_WithinHDFS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{8585DCBF-AE40-4E8E-B6AF-80CD56EDDCB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employees.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C56471B8-7085-4D1C-BC29-B9B86D984AA0}"
+      DTS:ObjectName="Employees.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Daniel.Inacio\Desktop\Data Science\Databases - SSIS\SSIS, Part 2\6.Hadoop\Employees.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Hadoop Connection Manager]"
+      DTS:CreationName="Hadoop"
+      DTS:DTSID="{848C3E6D-60D4-4971-B138-07F8D2826197}"
+      DTS:ObjectName="Hadoop Connection Manager">
+      <DTS:ObjectData>
+        <HadoopConnectionManager
+          ConnectionString="WebHdfsHost=192.168.160.128;WebHdfsPort=50070;WebHdfsUserName=maria_dev;WebHCatHost=192.168.160.128;WebHCatPort=50111;WebHCatUser=maria_dev;EnableWebHdfs=True;EnableWebHCat=True;WebHdfsAuthType=Basic;WebHdfsDomain=;WebHCatAuthType=Basic;WebHCatDomain=;WebHdfsIsHttps=False;WebHCatIsHttps=False;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Hadoop File System Task - Copy Within HDFS"
+      DTS:CreationName="HadoopFileSystemTask"
+      DTS:Description="Hadoop File System Task"
+      DTS:DTSID="{629B12D2-6A88-4864-A858-AC2B595D6E95}"
+      DTS:ExecutableType="HadoopFileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hadoop File System Task - Copy Within HDFS"
+      DTS:TaskContact="Hadoop File System Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <HadoopFileSystemTask
+          HadoopDestFilePath="/demo/NewEmployees.csv"
+          HadoopDestFileType="File"
+          HadoopConnectionId="{848C3E6D-60D4-4971-B138-07F8D2826197}"
+          Operation="CopyWithinHDFS"
+          HadoopFilePath="/demo/Employees.csv"
+          HadoopFileType="File" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Hadoop File System Task | Copy From HDFS"
+      DTS:CreationName="HadoopFileSystemTask"
+      DTS:Description="Hadoop File System Task"
+      DTS:DTSID="{EF68EBA0-7FCB-4170-95B9-BAD8014690D0}"
+      DTS:ExecutableType="HadoopFileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hadoop File System Task | Copy From HDFS"
+      DTS:TaskContact="Hadoop File System Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <HadoopFileSystemTask
+          LocalFilePathId="{C56471B8-7085-4D1C-BC29-B9B86D984AA0}"
+          HadoopConnectionId="{848C3E6D-60D4-4971-B138-07F8D2826197}"
+          Operation="CopyFromHDFS"
+          IsOverwrite="True"
+          HadoopFilePath="/demo/Employees.csv"
+          HadoopFileType="File" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Hadoop File System Task | Copy To HDFS"
+      DTS:CreationName="HadoopFileSystemTask"
+      DTS:Description="Hadoop File System Task"
+      DTS:DTSID="{5DA70973-F714-4ECD-B6F3-B06F422B77A0}"
+      DTS:ExecutableType="HadoopFileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Hadoop File System Task | Copy To HDFS"
+      DTS:TaskContact="Hadoop File System Task; (C) Microsoft Corporation; All Rights Reserved"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <HadoopFileSystemTask
+          LocalFilePathId="{C56471B8-7085-4D1C-BC29-B9B86D984AA0}"
+          HadoopConnectionId="{848C3E6D-60D4-4971-B138-07F8D2826197}"
+          Operation="CopyToHDFS"
+          IsOverwrite="True"
+          HadoopFilePath="/demo/Employees.csv"
+          HadoopFileType="File" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="293.6,41.6"
+          Id="Package\Hadoop File System Task - Copy Within HDFS"
+          TopLeft="61.6666642162535,190.666668181949" />
+        <NodeLayout
+          Size="288,41.6"
+          Id="Package\Hadoop File System Task | Copy From HDFS"
+          TopLeft="58.333331015375,122.200000971158" />
+        <NodeLayout
+          Size="276,41.6"
+          Id="Package\Hadoop File System Task | Copy To HDFS"
+          TopLeft="57.4999977151553,55.4666671074761" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

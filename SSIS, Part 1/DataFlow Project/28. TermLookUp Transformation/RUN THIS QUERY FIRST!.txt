@@ -1,0 +1,12 @@
+/****** Object:  Table [dbo].[TermLookUpDemo]    Script Date: 3/26/2017 1:30:54 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TermLookUpDemo](
+	[Term] [nvarchar](150) NULL,
+	[Frequency] [int] NULL,
+	[Sentence] [nvarchar](150) NULL
+) ON [PRIMARY]
+
+GO

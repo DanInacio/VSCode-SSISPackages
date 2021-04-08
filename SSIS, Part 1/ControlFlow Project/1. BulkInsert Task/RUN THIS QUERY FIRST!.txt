@@ -1,0 +1,1 @@
+DELETE FROM [AdventureWorks2019].[dbo].[Employees]

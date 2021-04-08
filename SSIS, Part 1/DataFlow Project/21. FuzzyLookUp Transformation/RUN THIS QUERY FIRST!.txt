@@ -1,0 +1,13 @@
+CREATE TABLE Occupation(
+    OccupationID smallint PRIMARY KEY NOT NULL,
+    OccupationTitle VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE [dbo].[Employees](
+    [EmployeeID] [int] IDENTITY(1,1) NOT NULL,  ---bold part is not provided in the scripts
+    [LastName] [varchar](50) NULL,
+    [FirstName] [varchar](50) NULL,
+    [OccupationID] [int] NULL,
+    [OccupationTitle] [varchar](50) NULL
+) ON [PRIMARY]
+/*This table is left EMPTY!!!*/
